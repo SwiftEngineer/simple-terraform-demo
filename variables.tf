@@ -11,7 +11,7 @@ variable "aws_secret_key" {
   description = "AWS secret key"
 }
 
-variable "ui_bucket_name" {
+variable "bucket_name" {
   description = "name of the bucket"
-  default = "terraform-demo-ui"
+  default = "terraform-goat-demo"
 }

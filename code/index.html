@@ -8,7 +8,7 @@
     <h1 id="people" class="list-unstyled"></h1>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-      axios.get('https://7x7nnifu9h.execute-api.us-west-2.amazonaws.com/live/artists')
+      axios.get('https://terraform-goat-demo.doing.science/live/artists')
         .then(function (response) {
           document.getElementById('people').innerHTML = response.data.the_greatest_of_all_time;
         })

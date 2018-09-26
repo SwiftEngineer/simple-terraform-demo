@@ -1,6 +1,6 @@
 # AWS S3 bucket for static hosting
 resource "aws_s3_bucket" "website" {
-  bucket = "${var.ui_bucket_name}"
+  bucket = "${var.bucket_name}"
   acl = "public-read"
 
   cors_rule {
@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "website" {
         "AWS": "*"
       },
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::${var.ui_bucket_name}/*"
+      "Resource": "arn:aws:s3:::${var.bucket_name}/*"
     }
   ]
 }
