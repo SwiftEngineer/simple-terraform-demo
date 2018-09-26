@@ -58,6 +58,29 @@ resource "aws_iam_role" "assumed_lambda_exec" {
 EOF
 }
 
+resource "aws_iam_role_policy" "cloud_watch" {
+  name = "DemoApiCloudWatchLoggingPolicy"
+
+  role = "${aws_iam_role.assumed_lambda_exec.id}"
+
+  policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+EOF
+}
+
 # Lambda
 
 resource "aws_lambda_function" "greatest_artist_lambda" {

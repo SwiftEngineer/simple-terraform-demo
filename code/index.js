@@ -5,5 +5,17 @@
 */
 exports.handler = (event, context, callback) => {
 	// it's true though
-    callback(null, { the_greatest_of_all_time: "Kanye West" });
+	var responseBody = { the_greatest_of_all_time: "Kanye West" };
+
+    var response = {
+        "statusCode": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(responseBody),
+        "isBase64Encoded": false
+    };
+
+    callback(null, response);
 }
