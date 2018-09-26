@@ -1,0 +1,14 @@
+# terraform
+.terraform/*
+.terraform.tfstate.lock.info
+terraform.tfstate
+terraform.tfstate.backup
+
+# secrets
+secrets.tfvars
+
+# osx files
+.DS_Store
+
+# archives
+code/archived.zip

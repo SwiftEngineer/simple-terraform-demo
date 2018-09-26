@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Best Artist Calculator</title>
+  </head>
+  <body class="container">
+    <h1>Greatest artist of all time:</h1>
+    <h1 id="people" class="list-unstyled"></h1>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      axios.get('/get/server')
+        .then(function (response) {
+          document.getElementById('people').innerHTML = response.data;
+        })
+        .catch(function (err) {
+          document.getElementById('people').innerHTML = err.message;
+        });
+    </script>
+  </body>
+</html>
